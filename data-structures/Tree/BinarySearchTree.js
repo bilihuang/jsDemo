@@ -91,7 +91,7 @@ class BinarySearchTree {
   // 搜索特定值
   search(key) {
     const searchNode = (node, key) => {
-      if (node == null)
+      if (!node)
         return false
       if (node.key === key)
         return node
@@ -133,6 +133,7 @@ class BinarySearchTree {
       }
       return node
     }
-    return removeNode(this.root, key)
+    this.root = removeNode(this.root, key)
+    return this
   }
 }
