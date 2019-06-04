@@ -6,6 +6,7 @@ const myMap = function (fn, context) {
     // 对稀疏数组的处理，通过 hasOwnProperty 来判断当前下标的元素是否存在于数组中
     if (!arr.hasOwnproperty(i))
       continue
+    // call后三个参数传入fn作为fn的参数
     mapArr.push(fn.call(context, arr[i], i, this))
   }
 }
