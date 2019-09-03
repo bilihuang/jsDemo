@@ -5,7 +5,6 @@ function curry(fn){
     if(fn.length===args.length){
       return fn(...args)
     }else{
-      debugger
       return (...args2)=>{
         return generator(...args,...args2)
       }
