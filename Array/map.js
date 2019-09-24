@@ -1,5 +1,5 @@
 // 普通实现
-const myMap = function (fn, context) {
+Array.prototype.myMap = function (fn, context) {
   let arr = Array.prototype.slice.call(this)
   let mapArr = []
   for (let i = 0; i < arr.length; i++) {
@@ -12,7 +12,7 @@ const myMap = function (fn, context) {
 }
 
 // 使用 reduce 实现数组 map 方法
-const reduceMap = function (fn, context) {
+Array.prototype.reduceMap = function (fn, context) {
   let arr = Array.prototype.slice.call(this)
   return arr.reduce((pre, cur, index) => {
     return [...pre, fn.call(context, cur, index, this)]

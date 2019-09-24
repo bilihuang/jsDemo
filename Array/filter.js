@@ -1,5 +1,5 @@
 // 非reduce实现
-const myFilter = function (fn, context) {
+Array.prototype.myFilter = function (fn, context) {
   let arr = Array.prototype.slice.call(this)
   let filterArr = []
   for (let i = 0; i < arr.length; i++) {
@@ -10,7 +10,7 @@ const myFilter = function (fn, context) {
 }
 
 // reduce实现
-const reduceFilter = function (fn, context) {
+Array.prototype.reduceFilter = function (fn, context) {
   return this.reduce((pre, cur, index) => {
     return fn.call(context, cur, index, this) ? [...pre, cur] : [...pre]
   }, [])

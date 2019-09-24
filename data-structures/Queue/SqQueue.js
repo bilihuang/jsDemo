@@ -1,12 +1,12 @@
 class SqQueue {
   constructor(length) {
-    this.length = new Array(length)
+    this.queue = new Array(length)
     // 头尾指针初始位置-1
     this.first = -1
     this.last = -1
   }
   // 入列
-  enQueue(value) {
+  enQueue (value) {
     if (this.isFull())
       return '队列已满，入列失败'
     if (this.isEmpty())
@@ -16,7 +16,7 @@ class SqQueue {
     return '入列成功'
   }
   // 出列
-  deQueue() {
+  deQueue () {
     if (this.isEmpty())
       return '队列为空，出列失败'
     let value = this.queue[this.first]
@@ -29,15 +29,15 @@ class SqQueue {
     return value
   }
   // 获取队头元素
-  Front() {
+  Front () {
     if (this.isEmpty()) {
-      return '队列为空，出列失败'
+      return '队列为空，获取失败'
     } else {
       return this.queue[this.first]
     }
   }
   // 获取队尾元素
-  Rear() {
+  Rear () {
     if (this.isEmpty()) {
       return '队列为空，获取失败'
     } else {
@@ -45,11 +45,11 @@ class SqQueue {
     }
   }
   // 判空
-  isEmpty() {
+  isEmpty () {
     return this.first === -1
   }
   // 判满
-  isFull() {
-    return this.first === (this.last + 1) % this.enQueue.length
+  isFull () {
+    return this.first === (this.last + 1) % this.queue.length
   }
 }

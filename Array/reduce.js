@@ -1,5 +1,5 @@
 // 实现reduce
-const myReduce = function (fn, initVal) {
+Array.prototype.myReduce = function (fn, initVal) {
   let arr = Array.prototype.slice.call(this)
   let res, startIndex
   if (initVal === undefined) {
