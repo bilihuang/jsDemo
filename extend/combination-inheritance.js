@@ -2,7 +2,7 @@
 // 基本思路: 使用原型链实现对原型属性和方法的继承,通过借用构造函数来实现对实例属性的继承.(最常用)
 // 组合原型链和借用构造函数的优点，缺点是调用两次父类构造函数，造成不必要消耗
 
-function Father(name) {
+function Father (name) {
   this.name = name
   this.colors = ["red", "blue", "green"]
 }
@@ -11,7 +11,7 @@ Father.prototype.sayName = function () {
   console.log(this.name)
 }
 
-function Son(name, age) {
+function Son (name, age) {
   Father.call(this, name) // 继承实例属性，第二次调用Father()
   this.age = age
 }

@@ -2,16 +2,16 @@
 const throttle = (func, delay = 50) => {
   let timer = null
   let previous = 0
-  return function(args) {
+  return function (args) {
     let now = Date.now()
     let remaining = delay - (now - previous); //距离规定时间,还剩多少时间
     clearTimeout(timer);  //清除之前设置的定时器
     if (remaining <= 0) {
-      fun.apply(this, arguments)
+      func.apply(this, args)
       previous = Date.now()
     } else {
       timer = setTimeout(() => {
-        fun.apply(this, arguments)
+        func.apply(this, args)
       }, remaining) //因为上面添加的clearTimeout.实际这个定时器只有最后一次才会执行
     }
   }

@@ -2,13 +2,19 @@
 // 基本思路: 不必为了指定子类型的原型而调用超类型的构造函数
 // 寄生组合式继承是为了降低调用父类构造函数的开销而出现的，是组合继承的优化版
 
-function extend(Son, Father) {
-  var prototype = Object(Father.prototype) // 创建对象
+function object (o) {
+  function F () { }
+  F.prototype = o
+  return new F()
+}
+
+function extend (Son, Father) {
+  var prototype = object(Father.prototype) // 创建对象
   prototype.constructor = Son // 增强对象
   Son.prototype = prototype // 指定对象
 }
 
-function Father(name) {
+function Father (name) {
   this.name = name
   this.colors = ["red", "blue", "green"]
 }
@@ -17,7 +23,7 @@ Father.prototype.sayName = function () {
   console.log(this.name)
 }
 
-function Son(name, age) {
+function Son (name, age) {
   Father.call(this, name) // 继承实例属性，第一次调用Father()
   this.age = age
 }

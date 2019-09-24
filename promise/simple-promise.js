@@ -25,7 +25,7 @@ function MyPromise(fn) {
 
   function reject(value) {
     if (that.state == PENDING) {
-      that.state = RESOLVED
+      that.state = REJECTED
       that.value = value
       that.rejectedCallbacks.map(cb => cb(that.value))
     }

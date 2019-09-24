@@ -1,6 +1,6 @@
 // call、apply和bind的实现
 
-const myCall = function(context) {
+Function.prototype.myCall = function(context) {
   if (typeof this !== 'function') {
     throw new TypeError('Error')
   }
@@ -12,7 +12,7 @@ const myCall = function(context) {
   return result
 }
 
-const myApply = function(context) {
+Function.prototype.myApply = function(context) {
   if (typeof this !== 'function') {
     throw new TypeError('Error')
   }
@@ -29,7 +29,7 @@ const myApply = function(context) {
   return result
 }
 
-const myBind = function (context) {
+Function.prototype.myBind = function (context) {
   if (typeof this !== 'function') {
     throw new TypeError('Error')
   }

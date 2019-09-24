@@ -8,11 +8,11 @@
  * 缺点：方法都在构造函数中定义, 因此函数复用也就不可用了.而且超类型(如Father)中定义的方法,对子类型而言也是不可见的.
  */
 
-function Father() {
+function Father () {
   this.colors = ["red", "blue", "green"]
 }
 
-function Son() {
+function Son () {
   // 继承了Father，并向父类传递参数
   Father.call(this)
 }
