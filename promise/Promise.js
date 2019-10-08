@@ -205,7 +205,7 @@ Promise.all = function (promises) {
   })
 }
 
-function gen (length, reslove) {
+function gen (length, resolve) {
   let count = 0
   let values = []
   return function (i, value) {
