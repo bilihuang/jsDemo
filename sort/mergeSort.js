@@ -1,4 +1,5 @@
 // 归并排序
+// 时间复杂度O(nlogn)
 function mergeSort(array) {
   if (!Array.isArray(array))
     return false

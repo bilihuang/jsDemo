@@ -1,5 +1,6 @@
 // 选择排序
 // 搜索最小值与第一位交换，再搜索第二小值与第二位交换
+// 时间复杂度O(n^2)
 function selectionSort(array) {
   if (!Array.isArray(array))
     return false

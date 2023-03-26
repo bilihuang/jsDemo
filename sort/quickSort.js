@@ -1,9 +1,7 @@
 // 快速排序
-
+// 时间复杂度O(nlogn)
 const swap = (arr, i, j) => {
-  const temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
+  [arr[i], arr[j]] = [arr[j], arr[i]]
 }
 
 const partition = (arr, pivot, left, right) => {

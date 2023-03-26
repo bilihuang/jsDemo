@@ -1,4 +1,5 @@
-// 插入排序
+// 插入排序，找到元素在它前面那个序列中的正确位置
+// 最好时间复杂度O(n)，最差和平均O(n^2)
 function insertionSort(array) {
   if (!Array.isArray(array))
     return false
